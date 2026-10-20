@@ -1,0 +1,46 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target arm64-apple-ios26.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AppleSignInManagerSDK
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+import AuthenticationServices
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc @_inheritsConvenienceInitializers public class AppleSignInManager : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func startSignIn(presentationAnchor: AuthenticationServices.ASPresentationAnchor? = nil, completion: @escaping (Swift.Result<AppleSignInManagerSDK.AppleSignInUser, any Swift.Error>) -> Swift.Void)
+  #endif
+  @objc deinit
+}
+extension AppleSignInManagerSDK.AppleSignInManager : AuthenticationServices.ASAuthorizationControllerDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func authorizationController(controller: AuthenticationServices.ASAuthorizationController, didCompleteWithAuthorization authorization: AuthenticationServices.ASAuthorization)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func authorizationController(controller: AuthenticationServices.ASAuthorizationController, didCompleteWithError error: any Swift.Error)
+}
+extension AppleSignInManagerSDK.AppleSignInManager : AuthenticationServices.ASAuthorizationControllerPresentationContextProviding {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func presentationAnchor(for controller: AuthenticationServices.ASAuthorizationController) -> AuthenticationServices.ASPresentationAnchor
+}
+public struct AppleSignInUser {
+  public let userId: Swift.String
+  public let firstName: Swift.String?
+  public let lastName: Swift.String?
+  public let email: Swift.String?
+  public let identityToken: Foundation.Data?
+  public let authorizationCode: Foundation.Data?
+  public let fullName: Foundation.PersonNameComponents?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(userId: Swift.String, firstName: Swift.String? = nil, lastName: Swift.String? = nil, email: Swift.String? = nil, identityToken: Foundation.Data? = nil, authorizationCode: Foundation.Data? = nil, fullName: Foundation.PersonNameComponents? = nil)
+  #endif
+}
+public enum AppleSignInError : Foundation.LocalizedError {
+  case cancelled
+  case invalidCredential
+  case unknown(any Swift.Error)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
+}
