@@ -1,8 +1,21 @@
-//
-//  Package.swift
-//  AppleSignInManagerSDK
-//
-//  Created by hb on 20/10/26.
-//
+// swift-tools-version: 5.9
+import PackageDescription
 
-import Foundation
+let package = Package(
+    name: "AppleSignInManagerSDK",
+    platforms: [
+        .iOS(.v15)
+    ],
+    products: [
+        .library(
+            name: "AppleSignInManagerSDK",
+            targets: ["AppleSignInManagerSDK"]
+        )
+    ],
+    targets: [
+        .binaryTarget(
+            name: "AppleSignInManagerSDK",
+            path: "Frameworks/AppleSignInManagerSDK.xcframework"
+        )
+    ]
+)

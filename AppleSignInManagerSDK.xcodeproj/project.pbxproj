@@ -8,12 +8,18 @@
 
 /* Begin PBXFileReference section */
 		273517AE301A096D0017DD12 /* AppleSignInManagerSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppleSignInManagerSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27ABD47E30876565003417DD /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		273517B0301A096D0017DD12 /* AppleSignInManagerSDK */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = AppleSignInManagerSDK;
+			sourceTree = "<group>";
+		};
+		27ABD48030876585003417DD /* Frameworks */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +38,8 @@
 		273517A4301A096D0017DD12 = {
 			isa = PBXGroup;
 			children = (
+				27ABD48030876585003417DD /* Frameworks */,
+				27ABD47E30876565003417DD /* Package.swift */,
 				273517B0301A096D0017DD12 /* AppleSignInManagerSDK */,
 				273517AF301A096D0017DD12 /* Products */,
 			);
@@ -73,6 +81,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				273517B0301A096D0017DD12 /* AppleSignInManagerSDK */,
+				27ABD48030876585003417DD /* Frameworks */,
 			);
 			name = AppleSignInManagerSDK;
 			packageProductDependencies = (
